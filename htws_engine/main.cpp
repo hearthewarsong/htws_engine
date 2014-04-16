@@ -2,8 +2,10 @@
 
 int main()
 {
-	std::cout << "proba" << std::endl;
+	for (int i = 0; i < 10; ++i)
+	{
+		std::cout << "proba" << i << std::endl;
+	}
 	return 0;
 }
-
 
