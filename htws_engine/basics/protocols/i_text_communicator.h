@@ -5,6 +5,7 @@
 
 class ProtEnums
 {
+public:
 	enum Status { Unopened, Connected, Timeout, Closed, Error};
 };
 
