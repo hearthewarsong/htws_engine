@@ -11,5 +11,6 @@
 #include "singleton.h"
 #include "functors.hpp"
 #include "property.hpp"
+#include "basics_macros.h"
 
 #endif /* BASICS_TEMPLATES_ALL_H_ */

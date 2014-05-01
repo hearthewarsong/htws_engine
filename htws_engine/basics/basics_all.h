@@ -1,8 +1,8 @@
-
-
-
 #ifndef BASICS_ALL_H_
 #define BASICS_ALL_H_
+
+
+#include "../config/htwsconfig_all.h"
 
 #include "defines/basics_define_all.h"
 #include "globals/basics_globals.h"

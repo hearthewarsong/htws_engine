@@ -5,6 +5,8 @@
 #define NULL 0
 #endif
 
+typedef unsigned char byte;
+
 #define pure = 0
 
 #define OWNERSHIP

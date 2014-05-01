@@ -1,0 +1,6 @@
+#ifndef HTWSCONFIG_PRE_MAIN_H_
+#define HTWSCONFIG_PRE_MAIN_H_
+
+
+
+#endif /* HTWSCONFIG_PRE_MAIN_H_ */

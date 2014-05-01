@@ -1,0 +1,8 @@
+#ifndef PROJECT_CONFIG_PRE_H_
+#define PROJECT_CONFIG_PRE_H_
+
+#define HTWS_NETWORK
+
+
+
+#endif /* PROJECT_CONFIG_PRE_H_ */
