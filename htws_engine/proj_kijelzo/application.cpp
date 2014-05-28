@@ -1,11 +1,16 @@
-/*
- * Application.cpp
- *
- *  Created on: Apr 19, 2014
- *      Author: hearthewarsong
- */
+#include "application.h"
 
-#include "proj_kijelzo_all.h"
+#ifdef PROJECT_KIJELZO
+
+#include <iostream>
+#include <map>
+#include <string>
+#include <utility>
+
+#include "../basics/file/text_file_reader.h"
+#include "../basics/string/string_helper.h"
+#include "../basics/templates/basics_macros.h"
+//#include "proj_kijelzo_all.h"
 
 Application::Application()
 {
@@ -40,3 +45,5 @@ void Application::Run()
 	}
 	std::cout << "Ujra fxoryyyyyydul" << std::endl;
 }
+
+#endif /* PROJECT_KIJELZO */

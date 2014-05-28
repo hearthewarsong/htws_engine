@@ -37,8 +37,8 @@ public:
 class IWTextCommunicator : public IICommunicator
 {
 public:
-	virtual int Read(wstring& str) pure;
-	virtual bool Write(wstring& str) pure;
+	virtual int Read(wstring& text) pure;
+	virtual bool Write(const wstring& text) pure;
 };
 
 class IBinaryCommunicaror: public IICommunicator

@@ -2,6 +2,8 @@
 
 #if defined(PROJECT_MKK)
 #include "../proj_kijelzo/proj_kijelzo_all.h"
+#elif defined(PROJECT_CONSOL)
+#include "../proj_consol/proj_consol_all.h"
 #else
 #error No active project, pls define it.
 #endif

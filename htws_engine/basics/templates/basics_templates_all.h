@@ -12,5 +12,6 @@
 #include "functors.hpp"
 #include "property.hpp"
 #include "basics_macros.h"
+#include "scontainer.hpp"
 
 #endif /* BASICS_TEMPLATES_ALL_H_ */

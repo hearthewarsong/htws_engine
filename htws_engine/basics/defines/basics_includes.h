@@ -4,7 +4,9 @@
 #include <vector>
 #include <stack>
 #include <map>
+#include <deque>
 #include <string>
+#include <memory>
 #include <algorithm>
 #include <functional>
 #include <cctype>
@@ -16,7 +18,9 @@
 using std::vector;
 using std::stack;
 using std::map;
+using std::deque;
 using std::string;
 using std::wstring;
+using std::auto_ptr;
 
 #endif /* BASICS_INCLUDES_H_ */

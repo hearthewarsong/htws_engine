@@ -1,6 +1,7 @@
 #ifndef HTWSCONFIG_PRE_MAIN_H_
 #define HTWSCONFIG_PRE_MAIN_H_
 
-
+#define _3RD_SFML2
+#define HTWS_GRAPHICS
 
 #endif /* HTWSCONFIG_PRE_MAIN_H_ */

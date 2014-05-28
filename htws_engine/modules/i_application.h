@@ -1,10 +1,3 @@
-/*
- * i_application.h
- *
- *  Created on: Apr 19, 2014
- *      Author: hearthewarsong
- */
-
 #ifndef I_APPLICATION_H_
 #define I_APPLICATION_H_
 
