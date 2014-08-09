@@ -10,6 +10,7 @@
 
 #ifdef HTWS_GRAPHICS
 
+#include "color.h"
 #include "graphics_interfaces.h"
 
 #endif /* HTWS_GRAPHICS */

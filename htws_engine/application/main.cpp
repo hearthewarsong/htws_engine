@@ -11,6 +11,7 @@
 
 int main(int argc, char* argv[])
 {
+	std::cout << "main::Starting..." << std::endl;
 	do
 	{
 		htws_globals::Restart = false;
@@ -20,6 +21,7 @@ int main(int argc, char* argv[])
 		SingletonRegistry::DestroyAll();
 	}
 	while(htws_globals::Restart);
+	std::cout << "main::Stopped..." << std::endl;
 	return 0;
 }
 

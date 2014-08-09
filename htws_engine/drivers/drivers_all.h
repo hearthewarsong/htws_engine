@@ -7,6 +7,6 @@
 #include "network/drivers_network_all.h"
 #include "graphics/drivers_graphics_all.h"
 
-#include "sfml2/drivers_sfml2_all.h"
+#include "sfml16/drivers_sfml16_all.h"
 
 #endif /* DRIVERS_ALL_H_ */

@@ -10,6 +10,11 @@
 
 class SystemEventHandler: public ISystemEventHandler, public Singleton<SystemEventHandler>
 {
+protected:
+	typedef vector<IFunction<bool,const CloseEvent&>*> CloseEventListeners;
+	typedef vector<IFunction<bool,const KeyEvent&>*> KeyEventListeners;
+	CloseEventListeners closeEventListeners;
+	KeyEventListeners keyEventListeners;
 public:
 	SystemEventHandler();
 	virtual ~SystemEventHandler();

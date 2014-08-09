@@ -21,7 +21,7 @@ public:
 	int keyCode;
 	bool isUp;
 	KeyEvent(int keyCode, bool isUp) :
-		Event(Event::KEY_EVENT), keyCode(keyCode), isUp(isUp)
+			Event(Event::KEY_EVENT), keyCode(keyCode), isUp(isUp)
 	{
 	}
 };
@@ -33,13 +33,17 @@ public:
 			Event(Event::CLOSE_EVENT)
 	{
 	}
+	virtual ~CloseEvent()
+	{
+	}
 };
 
 class ISystemEventHandler
 {
 public:
-	virtual void ProcessEvents()
-	pure;virtual void AddKeyEventListener(OWNERSHIP IFunction<bool,const KeyEvent&>* listener) pure;virtual void AddCloseEventListener(OWNERSHIP IFunction<bool,const CloseEvent&>* listener) pure;
+	virtual void ProcessEvents() pure;
+	virtual void AddKeyEventListener(OWNERSHIP IFunction<bool,const KeyEvent&>* listener) pure;
+	virtual void AddCloseEventListener(OWNERSHIP IFunction<bool,const CloseEvent&>* listener) pure;
 	virtual ~ISystemEventHandler()
 	{
 	}

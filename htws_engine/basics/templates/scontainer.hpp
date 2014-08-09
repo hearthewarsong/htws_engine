@@ -9,7 +9,7 @@ protected:
 	typedef vector<SContainer<T>*> ChildList;
 	ChildList children;
 public:
-	virtual const vector<SContainer<T>*>& GetCildren() const
+	virtual vector<SContainer<T>*>& GetCildren()
 	{
 		return children;
 	}
@@ -17,7 +17,7 @@ public:
 	{
 		return children.size() != 0;
 	}
-	virtual bool AddChildren(SContainer<T>* child)
+	virtual bool AddChildren(OWNERSHIP SContainer<T>* child)
 	{
 		if (std::find(children.begin(), children.end(), child)
 				!= children.end())
@@ -41,7 +41,14 @@ public:
 	{
 		return true;
 	}
-	virtual ~SContainer() {}
+	virtual void SortChildren() { std::sort(children.begin(), children.end());}
+	virtual ~SContainer()
+	{
+		for(int i = 0; i<children.size(); ++i)
+		{
+			delete children[i];
+		}
+	}
 };
 
 #endif /* CONTAINER_HPP_ */

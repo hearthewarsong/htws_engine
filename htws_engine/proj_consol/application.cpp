@@ -29,12 +29,18 @@ void Application::Run()
 {
 	GConsole consol("", 16);
 	consol.Open("", "");
-	consol.Write(L"Proba line 1");
-	consol.Write(L"Proba line 2");
-	consol.Write(L"Proba line 3");
+	consol.Write(L"Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line Proba line 1\n");
+	consol.Write(L"Proba line 2\n");
+	consol.Write(L"Proba line 3\n");
 	while(!closing)
 	{
 		pSysEventHandler->ProcessEvents();
+		consol.Update();
+		if (consol.isClosed())
+		{
+			closing = true;
+			break;
+		}
 		consol.Render(NULL);
 	}
 }

@@ -13,5 +13,6 @@
 #include "property.hpp"
 #include "basics_macros.h"
 #include "scontainer.hpp"
+#include "math_classes.hpp"
 
 #endif /* BASICS_TEMPLATES_ALL_H_ */

@@ -5,15 +5,25 @@
  *      Author: hearthewarsong
  */
 
-#ifndef SFML2_WINDOW_H_
-#define SFML2_WINDOW_H_
+#ifndef SFML16_WINDOW_H_
+#define SFML16_WINDOW_H_
 
-class Window : IWindow
+class WindowImpl : public IWindow, public ICanvas
 {
+protected:
+	sf::RenderWindow _window;
+	void RecursiveRender(SContainer<IDrawable2D>& cRoot, bool skipCurrent = false);
 public:
-	Window();
+	WindowImpl(const string& nameddd);
 	void Render(ICanvas * canvas);
-	virtual ~Window();
+	void Update();
+	virtual ~WindowImpl();
+	virtual NumVector<int> GetSize();
+	virtual NumVector<int> GetPosition();
+	virtual bool Supports3D();
+	virtual bool Draw(const IDrawable2D& object);
+	virtual bool Draw(const IDrawable3D& object);
+	virtual void* GetDriverSpecificRenderTarget() { return (sf::RenderTarget*)&_window; }
 };
 
-#endif /* SFML2_WINDOW_H_ */
+#endif /* SFML16_WINDOW_H_ */
