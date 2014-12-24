@@ -28,6 +28,7 @@ public:
 	void SetFont(const IFont* font);
 	void SetFontSize(unsigned int size);
 	void SetColor(const Color& color);
+	void SetPosition(int top, int left);
 	void SetWordWrap(unsigned wrap) { this->wrap = wrap; }
 	int GetLineCountIfWrapped(wstring& line);
 	virtual bool CanHaveChildren() { return false; }

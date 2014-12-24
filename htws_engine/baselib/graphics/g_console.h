@@ -12,6 +12,10 @@ protected:
 	bool useFormating;
 	ProtEnums::Status status;
 	TextControl* outputControl;
+	TextControl* inputControl;
+	wstring inputText;
+	unsigned inputIndex;
+	deque<wstring> unreadLines;
 public:
 	GConsole(string fontName, int fontSize, unsigned cachedLines = 100);
 	void Write(const string& text);
@@ -30,12 +34,17 @@ public:
 	virtual void Close();
 	virtual bool Reinit();
 	virtual int Read(wstring& str);;
-
+	virtual bool GetLine(wstring& line);
+	virtual void initEventHandling(ISystemEventHandler* eventHandler);
 	virtual ~GConsole();
 protected:
 	virtual void _write(const wchar_t* text);
 	virtual void _refreshLines();
 	virtual int _getLineNumber();
+	bool _textKeyPressed(const TextKeyEvent& event);
+	bool _keyPressed(const KeyEvent& event);
+	virtual void TextKeyEntered(wchar_t key);
+	virtual void LineEntered(const wstring& text);
 };
 
 #endif /* G_CONSOLE_H_ */

@@ -9,7 +9,7 @@
 
 CREATE_STATIC_INSTANCE(ConstantConfig);
 
-ConstantConfig ::ConstantConfig()
+ConstantConfig::ConstantConfig()
 {
 	vector<string> config_files;
 	std::ifstream configList(

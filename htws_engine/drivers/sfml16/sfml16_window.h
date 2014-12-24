@@ -24,6 +24,7 @@ public:
 	virtual bool Draw(const IDrawable2D& object);
 	virtual bool Draw(const IDrawable3D& object);
 	virtual void* GetDriverSpecificRenderTarget() { return (sf::RenderTarget*)&_window; }
+	virtual sf::RenderWindow& GetSFRenderWindow() { return _window; }
 };
 
 #endif /* SFML16_WINDOW_H_ */

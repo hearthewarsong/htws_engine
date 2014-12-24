@@ -1,0 +1,6 @@
+Places:
+Pm1,Pback1,Pout1,P1,Pm2,Pback2,Pout2,P2,Pm3,Pback3,Pout3,P3,Pm4,Pback4,Pout4,P4;
+Transitions:
+Tin1,Tredo1,Tok1,Tsynch1_2,Tback1,Tredo2,Tok2,Tsynch23_4,Tback2,Tredo3,Tok3,Tback3,Tredo4,Tok4,Tout4,Tback4;
+Edges:
+Tin1:Pm1:1,Pm1:Tredo1:1,Tredo1:Pback1:1,Pm1:Tok1:1,Tok1:Pout1:1,Pout1:Tsynch1_2:1,Tsynch1_2:P1:1,P1:Tin1:1,Pback1:Tback1:1,Tback1:Pm1:1,Pm2:Tredo2:1,Tredo2:Pback2:1,Pm2:Tok2:1,Tok2:Pout2:1,Pout2:Tsynch23_4:1,Tsynch23_4:P2:1,Pback2:Tback2:1,Tback2:Pm2:1,P2:Tsynch1_2:1,Tsynch1_2:Pm2:1,Pm3:Tredo3:1,Tredo3:Pback3:1,Pm3:Tok3:1,Tok3:Pout3:1,Pback3:Tback3:1,Tback3:Pm3:1,Pout3:Tsynch23_4:1,Tsynch23_4:P3:1,P3:Tsynch1_2:1,Tsynch1_2:Pm3:1,Pm4:Tredo4:1,Tredo4:Pback4:1,Pm4:Tok4:1,Tok4:Pout4:1,Pout4:Tout4:1,Tout4:P4:1,Pback4:Tback4:1,Tback4:Pm4:1,Tsynch23_4:Pm4:1,P4:Tsynch23_4:1;

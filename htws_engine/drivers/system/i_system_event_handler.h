@@ -20,8 +20,21 @@ class KeyEvent: public Event
 public:
 	int keyCode;
 	bool isUp;
-	KeyEvent(int keyCode, bool isUp) :
-			Event(Event::KEY_EVENT), keyCode(keyCode), isUp(isUp)
+    bool      alt;
+    bool      control;
+    bool      shift;
+	KeyEvent(int keyCode, bool isUp, bool alt, bool control, bool shift) :
+			Event(Event::KEY_EVENT), keyCode(keyCode), isUp(isUp), alt(alt), control(control), shift(shift)
+	{
+	}
+};
+
+class TextKeyEvent: public Event
+{
+public:
+	int keyCode;
+	TextKeyEvent(int keyCode) :
+			Event(Event::KEY_EVENT), keyCode(keyCode)
 	{
 	}
 };
@@ -43,6 +56,7 @@ class ISystemEventHandler
 public:
 	virtual void ProcessEvents() pure;
 	virtual void AddKeyEventListener(OWNERSHIP IFunction<bool,const KeyEvent&>* listener) pure;
+	virtual void AddTextKeyEventListener(OWNERSHIP IFunction<bool,const TextKeyEvent&>* listener) pure;
 	virtual void AddCloseEventListener(OWNERSHIP IFunction<bool,const CloseEvent&>* listener) pure;
 	virtual ~ISystemEventHandler()
 	{

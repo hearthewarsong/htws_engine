@@ -11,7 +11,7 @@
 
 GConsole::GConsole(string fontName, int fontSize, unsigned cachedLines) :
 WindowImpl(string("Console")), fontName(fontName), fontSize(fontSize), cachedLines(
-				cachedLines), useFormating(false)
+				cachedLines), useFormating(false), inputIndex(0)
 {
 	// TODO Auto-generated constructor stub
 	outputControl = new TextControl();
@@ -19,8 +19,14 @@ WindowImpl(string("Console")), fontName(fontName), fontSize(fontSize), cachedLin
 	outputControl->SetColor(Color(0.0,0.0,1.0));
 	outputControl->SetWordWrap(GetSize().x);
 	AddChildren(outputControl);
+	inputControl = new TextControl();
+	inputControl->SetFontSize(fontSize);
+	inputControl->SetColor(Color(1.0,0.0,0.0));
+	inputControl->SetPosition(_getLineNumber() * fontSize,0);
+	AddChildren(inputControl);
 	status = ProtEnums::Connected;
 	lines.push_back(wstring());
+	BackgroundColor = Color(1.0,1.0,1.0);
 }
 
 GConsole::~GConsole()
@@ -158,5 +164,70 @@ void GConsole::_refreshLines()
 
 int GConsole::_getLineNumber()
 {
-	return GetSize().y / fontSize;
+	return ((int)(GetSize().y / fontSize)) -1;
+}
+
+void GConsole::initEventHandling(ISystemEventHandler* eventHandler)
+{
+	eventHandler->AddTextKeyEventListener(new MemberFunction<GConsole,bool, const TextKeyEvent&>(this, &GConsole::_textKeyPressed));
+	eventHandler->AddKeyEventListener(new MemberFunction<GConsole,bool, const KeyEvent&>(this, &GConsole::_keyPressed));
+}
+
+bool GConsole::_textKeyPressed(const TextKeyEvent& event)
+{
+	TextKeyEntered(event.keyCode);
+	return true;
+}
+
+void GConsole::TextKeyEntered(wchar_t key)
+{
+	if (key == L'\n' || key == L'\r')
+	{
+		LineEntered(inputText);
+		inputText.clear();
+		inputIndex = 0;
+	}
+	else if (key == L'\b')
+	{
+		if (inputIndex > 0)
+		{
+			for (unsigned i = inputIndex-1; i< inputText.size()-1; ++i)
+			{
+				inputText[i] = inputText[i+1];
+			}
+			inputText.pop_back();
+			--inputIndex;
+		}
+	}
+	else
+	{
+		inputText.push_back('_');
+		for (unsigned i = inputText.size() -1; i> inputIndex; --i)
+		{
+			inputText[i] = inputText[i-1];
+		}
+		inputText[inputIndex] = key;
+		++inputIndex;
+	}
+	inputControl->SetText(inputText);
+}
+
+void GConsole::LineEntered(const wstring& text)
+{
+	unreadLines.push_back(text);
+}
+
+bool GConsole::_keyPressed(const KeyEvent& event)
+{
+	if (event.keyCode == sf::Key::Left && inputIndex> 0) --inputIndex;
+	if (event.keyCode == sf::Key::Right && inputIndex< inputText.size()) ++inputIndex;
+	return true;
+}
+
+bool GConsole::GetLine(wstring& line)
+{
+	if (unreadLines.empty()) return false;
+	line = unreadLines.front();
+	unreadLines.pop_front();
+	return true;
 }

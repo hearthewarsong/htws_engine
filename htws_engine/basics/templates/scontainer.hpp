@@ -44,7 +44,7 @@ public:
 	virtual void SortChildren() { std::sort(children.begin(), children.end());}
 	virtual ~SContainer()
 	{
-		for(int i = 0; i<children.size(); ++i)
+		for(unsigned i = 0; i<children.size(); ++i)
 		{
 			delete children[i];
 		}

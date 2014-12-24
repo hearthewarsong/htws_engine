@@ -1,0 +1,12 @@
+Places:
+p1,p2,p3,p4,p5,p6,p7,p8;
+Transitions:
+t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13;
+Edges:
+t1:p1:1,t1:p2:1,t1:p3:1,t1:p4:1,t1:p5:1,
+p2:t1:1,p3:t1:1,p4:t1:1,p5:t1:1,
+p2:t2:1,t2:p3:1,
+p1:t2:1,t2:p3:1,
+p2:t3:1,
+t4:p2:1,t4:p3:2,
+t5:p2:2,t5:p3:2;

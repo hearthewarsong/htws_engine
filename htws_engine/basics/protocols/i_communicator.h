@@ -34,11 +34,25 @@ public:
 	virtual bool Write(const string& str) pure;
 };
 
+
+class IWTextCommunicatorStream;
+
 class IWTextCommunicator : public IICommunicator
 {
 public:
 	virtual int Read(wstring& text) pure;
 	virtual bool Write(const wstring& text) pure;
+	virtual IWTextCommunicatorStream GetOutStream();
+};
+
+class IWTextCommunicatorStream
+{
+private:
+	IWTextCommunicator* owner;
+public:
+	IWTextCommunicatorStream(IWTextCommunicator* owner) :owner(owner) {}
+	IWTextCommunicatorStream& operator<<(const wstring& text) { owner->Write(text); return (*this); }
+	IWTextCommunicatorStream& operator<<(int text) { owner->Write(std::to_wstring(text)); return (*this); }
 };
 
 class IBinaryCommunicaror: public IICommunicator

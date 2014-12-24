@@ -10,11 +10,8 @@
 #ifdef _3RD_SFML16
 
 WindowImpl::WindowImpl(const string& name) :
-		IWindow(name), _window(sf::VideoMode(800, 600, 32), name.c_str(), sf::Style::Close)
+		IWindow(name), _window(sf::VideoMode(800, 300, 32), name.c_str(), sf::Style::Close)
 {
-	sf::Font font;
-	std::string filename("proba.tff");
-	font.LoadFromFile(filename);
 }
 
 void WindowImpl::Update()

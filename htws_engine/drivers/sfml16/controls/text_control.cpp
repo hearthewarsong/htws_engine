@@ -162,3 +162,8 @@ void TextControl::Wrap()
 	}
 	textSprite.SetText(unwrappedstring);
 }
+
+void TextControl::SetPosition(int top, int left)
+{
+	textSprite.SetPosition(sf::Vector2<float>(left,top));
+}

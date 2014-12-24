@@ -24,7 +24,9 @@ public:
 
 	static string UTF16to8(const wchar_t * in);
 	static wstring UTF8to16(const char * in);
-
 };
+
+#define Format(x,y) (boost::format(x) % y).str().c_str()
+#define FormatW(x,y) (boost::wformat(x) % y).str().c_str()
 
 #endif /* STRING_HELPER_H_ */

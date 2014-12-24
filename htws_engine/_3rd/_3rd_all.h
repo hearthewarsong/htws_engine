@@ -10,5 +10,6 @@ extern "C"
 #include "lua52/lauxlib.h"
 }
 
+#include "boost/_3rd_boost_all.h"
 
 #endif /* H_3RD_ALL_H_ */

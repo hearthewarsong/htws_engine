@@ -10,7 +10,11 @@ class Application : public IApplication
 protected:
 	bool closing;
 	bool ClosingEventListener(const CloseEvent& event);
-	ISystemEventHandler* pSysEventHandler;
+	bool KeyEventListener(const KeyEvent& event);
+	auto_ptr<ISystemEventHandler> pSysEventHandler;
+	auto_ptr<GConsole> consol;
+	string netFile;
+	string problemFile;
 public:
 	Application();
 	virtual ~Application();
