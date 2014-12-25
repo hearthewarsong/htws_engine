@@ -13,8 +13,8 @@
 #include "protocols/basics_protocols_all.h"
 #include "file/basics_file_all.h"
 #include "templates/basics_templates_all.h"
-#include "config/basics_config_all.h"
 #include "globals/global_logger.h"
+#include "config/basics_config_all.h"
 
 
 #endif /* BASICS_ALL_H_ */

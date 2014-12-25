@@ -16,7 +16,7 @@ StringHelper::~StringHelper()
 {
 }
 
-string &StringHelper::ltrim(string &s)
+string StringHelper::ltrim(string s)
 {
 	s.erase(s.begin(),
 			std::find_if(s.begin(), s.end(),
@@ -24,7 +24,7 @@ string &StringHelper::ltrim(string &s)
 	return s;
 }
 
-string &StringHelper::rtrim(string &s)
+string StringHelper::rtrim(string s)
 {
 	s.erase(
 			std::find_if(s.rbegin(), s.rend(),
@@ -33,12 +33,12 @@ string &StringHelper::rtrim(string &s)
 	return s;
 }
 
-string &StringHelper::trim(string &s)
+string StringHelper::trim(string s)
 {
 	return ltrim(rtrim(s));
 }
 
-wstring& StringHelper::ltrim(wstring& s)
+wstring StringHelper::ltrim(wstring s)
 {
 	s.erase(s.begin(),
 			std::find_if(s.begin(), s.end(),
@@ -46,7 +46,7 @@ wstring& StringHelper::ltrim(wstring& s)
 	return s;
 }
 
-wstring& StringHelper::rtrim(wstring& s)
+wstring StringHelper::rtrim(wstring s)
 {
 	s.erase(
 			std::find_if(s.rbegin(), s.rend(),
@@ -55,7 +55,7 @@ wstring& StringHelper::rtrim(wstring& s)
 	return s;
 }
 
-wstring& StringHelper::trim(wstring& s)
+wstring StringHelper::trim(wstring s)
 {
 	return ltrim(rtrim(s));
 }

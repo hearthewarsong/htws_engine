@@ -1,6 +1,0 @@
-Places:
-Place1,Place2,Place4,Place3,Place4,Place4,Place5;
-Transitions:
-Transition1,Transition5,Transition6,Transition2,Transition3,Transition5,Transition6,Transition5,Transition6,Transition4,Transition7;
-Edges:
-Place2:Transition1:1,Transition1:Place2:1,Transition1:Place1:1,Place4:Transition6:1,Transition6:Place2:1,Place2:Transition5:1,Transition5:Place4:1,Transition1:Place3:1,Place3:Transition1:1,Place2:Transition2:1,Transition2:Place3:1,Place3:Transition3:1,Transition3:Place2:1,Place4:Transition6:1,Transition5:Place4:1,Place4:Transition6:1,Transition5:Place4:1,Transition5:Place4:1,Transition5:Place4:1,Place4:Transition6:1,Place4:Transition6:1,Place3:Transition4:1,Transition4:Place5:1,Place5:Transition7:1,Transition7:Place3:1,Place5:Transition1:1,Transition1:Place5:1;

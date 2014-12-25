@@ -41,51 +41,9 @@ void Application::Run()
 	consol->Open("", "");
 	consol->Write(L"Application Started...\n");
 	GlobalLogger::GetInstance()->SetLoggerOutput(consol.get());
-	GlobalLogger::GetInstance()->EnableArea("petri",5);
+	GlobalLogger::GetInstance()->EnableArea(LLA_Config,5);
 
-	vector<string> Tests;
-	//Tests.push_back("DPhil-10");
-	Tests.push_back("Cegar_Vegtelen");
-	//Tests.push_back("SlottedRing-100");
-	foreach(vector<string>,Tests,t)
-	{
-		std::clock_t clockStart = std::clock();
-		//Petrinet calculation:
-		petri::PertiFileHandler fileHandler;
-		petri::PetriNet* net = fileHandler.LoadPetriNetFromFile(FilePath((*t + ".pn").c_str()));
-		if (!net)
-		{
-			LLFM("faildet to load petri net");
-		}
-		petri::ReachibilityProblem* problem = fileHandler.LoadReachibilityProblem(FilePath((*t +".prb").c_str()));
-		if (!problem)
-		{
-			LLFM("faildet to load reachibility problem");
-		}
-		petri::ModuloStateSpaceExplorer moduloExplorer;
-
-		if (net && problem)
-		{
-			net->SetInitialMarking(problem->GetStartingMarking());
-			moduloExplorer.ExaminePetriNet(*net);
-			if (moduloExplorer.HasMarking(problem->GetEndMarking()))
-			{
-				consol->Write("Marking is reachable!\n");
-			}
-			else
-			{
-				consol->Write("Marking is unreachable!\n");
-			}
-		}
-		delete problem;
-		delete net;
-
-		std::clock_t clockFinish= std::clock();
-
-		consol->Write(Format("Algorith ended for %s in %d milliseconds. Size of graph: %d \n", (*t).c_str() %  ((clockFinish - clockStart) * 1000.0 / CLOCKS_PER_SEC) % moduloExplorer.GetGraphSize() ));
-	}
-		consol->Write("Algorithm ended!\n");
-
+	consol->Write(Format("Value of mkk.display.background->file_path is \"%s\"", ConfigTree::GetInstance()->GetElementOrDefault("mkk.display.background","file_path","images/background.jpg").GetString().c_str()));
 	while(!closing)
 	{
 		pSysEventHandler->ProcessEvents();

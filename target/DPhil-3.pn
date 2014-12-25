@@ -1,6 +1,0 @@
-Places:
-Fork0,Think0,WantToEat0,HandR0,HandL0,Fork1,Think1,WantToEat1,HandR1,HandL1,Fork2,Think2,WantToEat2,HandR2,HandL2;
-Transitions:
-GetR0,GetL0,Hunger0,Eat0,GetR1,GetL1,Hunger1,Eat1,GetR2,GetL2,Hunger2,Eat2;
-Edges:
-Think0:Hunger0:1,Hunger0:WantToEat0:1,WantToEat0:GetR0:1,GetR0:WantToEat0:1,WantToEat0:GetL0:1,GetL0:WantToEat0:1,Fork0:GetR0:1,GetR0:HandR0:1,Fork1:GetL0:1,GetL0:HandL0:1,HandL0:Eat0:1,HandR0:Eat0:1,WantToEat0:Eat0:1,Eat0:Think0:1,Eat0:Fork0:1,Eat0:Fork1:1,Think1:Hunger1:1,Hunger1:WantToEat1:1,WantToEat1:GetR1:1,GetR1:WantToEat1:1,WantToEat1:GetL1:1,GetL1:WantToEat1:1,Fork1:GetR1:1,GetR1:HandR1:1,Fork2:GetL1:1,GetL1:HandL1:1,HandL1:Eat1:1,HandR1:Eat1:1,WantToEat1:Eat1:1,Eat1:Think1:1,Eat1:Fork1:1,Eat1:Fork2:1,Think2:Hunger2:1,Hunger2:WantToEat2:1,WantToEat2:GetR2:1,GetR2:WantToEat2:1,WantToEat2:GetL2:1,GetL2:WantToEat2:1,Fork2:GetR2:1,GetR2:HandR2:1,Fork0:GetL2:1,GetL2:HandL2:1,HandL2:Eat2:1,HandR2:Eat2:1,WantToEat2:Eat2:1,Eat2:Think2:1,Eat2:Fork2:1,Eat2:Fork0:1;

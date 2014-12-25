@@ -112,7 +112,7 @@ PetriNet* PertiFileHandler::LoadPetriNetFromFile(const FilePath& path)
 			return NULL;
 		}
 		int placeIndex = -1;
-		for (int i = 0; i< places.size(); ++ i)
+		for (unsigned i = 0; i< places.size(); ++ i)
 		{
 			if (places[i] == placeName)
 			{

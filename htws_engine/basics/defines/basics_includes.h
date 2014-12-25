@@ -31,6 +31,7 @@ using std::deque;
 using std::string;
 using std::wstring;
 using std::auto_ptr;
+using std::unique_ptr;
 using std::list;
 using std::stringstream;
 

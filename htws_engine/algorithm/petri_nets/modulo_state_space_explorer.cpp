@@ -87,7 +87,7 @@ void ModuloStateSpaceExplorer::ExaminePetriNet(const PetriNet& modell,
 		if (!HasMarking(*currentNode))
 		{
 			markings.push_back(currentNode);
-			if (markings.size() % 100 == 0) printf(" Marking count: %d\n", markings.size());
+			if (markings.size() % 100 == 0) printf(" Marking count: %u\n", markings.size());
 			vector<Node*> descandants = GetDescandants(currentNode);
 			newmarkings.insert(newmarkings.end(),descandants.begin(),descandants.end());
 		}

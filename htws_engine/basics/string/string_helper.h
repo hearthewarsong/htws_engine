@@ -14,13 +14,13 @@ public:
 	StringHelper();
 	virtual ~StringHelper();
 
-	static string &ltrim(string &s);
-	static string &rtrim(string &s);
-	static string &trim(string &s);
+	static string ltrim(string s);
+	static string rtrim(string s);
+	static string trim(string s);
 
-	static wstring &ltrim(wstring &s);
-	static wstring &rtrim(wstring &s);
-	static wstring &trim(wstring &s);
+	static wstring ltrim(wstring s);
+	static wstring rtrim(wstring s);
+	static wstring trim(wstring s);
 
 	static string UTF16to8(const wchar_t * in);
 	static wstring UTF8to16(const char * in);

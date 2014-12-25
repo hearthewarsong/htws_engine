@@ -7,7 +7,7 @@ namespace htws
 class Timer
 {
 protected:
-	auto_ptr<IFunction<void> > task;
+	unique_ptr<IFunction<void> > task;
 	unsigned millisecs;
 public:
 	Timer(IFunction<void>* task, unsigned millisecs);
